@@ -32,6 +32,16 @@
 (define (class student-name)
   (cdr (car(cdddr student))))
 
+;still need to finish i think..
 (define (schedule student-name)
   (car(reverse student-name)))
-  
+
+(define (odds list-of-ints)
+  (if (null? list-of-ints)
+      0
+      (if (odd? (car list-of-ints))
+          (car (odds(cdr list-of-ints)))
+          (odds(cdr list-of-ints)))))
+
+
+ 
