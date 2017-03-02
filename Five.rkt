@@ -33,5 +33,11 @@
       (cons a_0 (arithmetic-prog(+ a_0 difference) difference (- iNdex 1)))))
 
 (define (geometric-prog a_0 ratio iNdex)
-  ("Your definition goes here"))
+  (if (equal? 0 iNdex)
+      '()
+      (cons a_0 (geometric-prog(* a_0 ratio) ratio (- iNdex 1)))))
 
+(define (sum list-of-nums)
+  (if (null? list-of-nums)
+      '0
+      (+ (car list-of-nums) (sum(cdr list-of-nums)))))
